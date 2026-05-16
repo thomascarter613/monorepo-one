@@ -1,18 +1,20 @@
 
 title: Delivery Operating Model
-status: draft
-version: 0.1.0
+status: accepted
+version: 0.2.0
 created: 2026-05-16
 updated: 2026-05-16
 project: monorepo-one
-jira_project_key: MONO
-----------------------
+supersedes: version 0.1.0 Jira-centered delivery model.
+-------------------------------------------------------
 
 # Delivery Operating Model
 
 ## Purpose
 
-This document defines how work moves through Monorepo One from idea to implementation, verification, merge, and record keeping.
+This document defines how work moves through Monorepo One from idea to implementation, verification, merge, and records management.
+
+The active delivery system is now GitHub-native.
 
 ## Delivery Principle
 
@@ -20,95 +22,141 @@ Every meaningful change should be traceable.
 
 A change should answer:
 
-* Why is this being done?
-* What work item authorized it?
-* What files changed?
-* How was it verified?
-* What decision or requirement does it support?
-* What record should preserve the outcome?
+* why it is being done;
+* what issue or decision authorized it;
+* what files changed;
+* how it was verified;
+* what ADR or requirement it supports;
+* whether a controlled record is required.
 
-## Current Toolchain of Work
+## Active Delivery Systems
 
-| Concern                     | System     |
-| --------------------------- | ---------- |
-| Work tracking               | Jira       |
-| Source and technical truth  | GitHub     |
-| Human-readable coordination | Confluence |
-| Controlled records          | Nextcloud  |
+| Concern                   | System               |
+| ------------------------- | -------------------- |
+| Work tracking             | GitHub Issues        |
+| Review gate               | GitHub Pull Requests |
+| Source of truth           | GitHub repository    |
+| Planning and architecture | Repo Markdown        |
+| Controlled records        | Nextcloud            |
 
-## Current Jira Reality
+## Deprecated Delivery Systems
 
-The Jira project key is:
+Jira and Confluence are deprecated for active Monorepo One delivery.
+
+They were attempted during setup but created friction disproportionate to the project stage.
+
+Historical references may remain in old records, but new work should not depend on Jira or Confluence.
+
+## Work Flow
 
 ```text
-MONO
+Idea
+→ GitHub Issue
+→ branch
+→ commit(s)
+→ pull request
+→ verification
+→ merge
+→ release/update
+→ controlled record, if applicable
 ```
 
-The intended workflow is:
+## GitHub Issue Types
+
+Use labels to classify issues.
+
+Recommended type labels:
 
 ```text
-Backlog → Ready → In Progress → In Review → Verification → Done
+type:adr
+type:bug
+type:chore
+type:docs
+type:feature
+type:risk
+type:spike
+type:work-packet
 ```
 
-However, custom workflow configuration was deferred because work item visibility became unreliable.
-
-The current accepted operational workflow is the simpler Jira default workflow, supplemented by labels, GitHub PRs, and verification discipline.
-
-## Required Traceability Fields
-
-For each meaningful work item, capture:
-
-* Jira key
-* summary
-* work type
-* component or area
-* acceptance criteria
-* verification method
-* related GitHub branch
-* related pull request
-* related ADR, if any
-* related Confluence page, if any
-* related Nextcloud record, if any
-
-## Branching Convention
+## Area Labels
 
 ```text
-MONO-123/<type>/<short-description>
+area:architecture
+area:delivery
+area:docs
+area:governance
+area:repo
+area:security
+area:tooling
+area:verification
+```
+
+## Phase Labels
+
+```text
+phase:0-foundation
+phase:1-structure
+phase:2-tooling
+phase:3-ci
+phase:4-first-app
+```
+
+## Status Labels
+
+```text
+status:ready
+status:in-progress
+status:blocked
+status:verification
+status:done
+```
+
+Status labels are lightweight. The authoritative state of implementation is the issue, branch, PR, and verification result.
+
+## Branch Naming
+
+Use:
+
+```text
+issue-<number>/<type>/<short-description>
 ```
 
 Examples:
 
 ```text
-MONO-2/docs/external-operating-model
-MONO-8/adr/repository-structure-contract
-MONO-12/chore/verification-script
+issue-1/docs/simplify-operating-model
+issue-2/chore/root-directory-contract
+issue-3/ci/add-github-actions-baseline
 ```
 
-## Commit Convention
+For work that has no issue yet, create the issue before opening the PR.
+
+## Commit Standard
 
 Use Conventional Commits.
 
 Example:
 
 ```text
-docs(delivery): document external operating model
+docs(governance): simplify operating model
 
-Refs: MONO-2
+Refs: #1
 ```
 
-## Pull Request Convention
+## Pull Request Standard
 
-Pull request titles should include the Jira key.
+A pull request should include:
 
-Example:
-
-```text
-[MONO-2] docs(delivery): document external operating model
-```
+* summary;
+* files/areas changed;
+* verification commands run;
+* known risks or deferrals;
+* linked issue;
+* screenshots or outputs when relevant.
 
 ## Definition of Ready
 
-A work item is ready when:
+A GitHub issue is ready when:
 
 * the goal is clear;
 * scope is bounded;
@@ -122,21 +170,39 @@ A work item is ready when:
 
 A work item is done when:
 
-* implementation or documentation is complete;
-* verification has passed or deferrals are documented;
+* changes are implemented or documented;
+* verification has passed or deferrals are explicit;
 * relevant docs are updated;
-* ADRs are created or updated if decisions changed;
-* GitHub branch/commit/PR references the Jira key;
-* Confluence is updated when coordination visibility is needed;
-* Nextcloud record is created when a controlled record is required;
-* the work is merged or otherwise formally closed.
+* ADRs are updated if decisions changed;
+* PR has been reviewed by the author at minimum;
+* the branch is merged;
+* controlled record is created in Nextcloud when required.
 
-## Current Gate Before Slice 3
+## Verification Discipline
 
-Slice 3 remains blocked until:
+At minimum, documentation-only slices should run:
 
-* external operating model is documented;
-* planning deliverable register is documented;
-* document control model is documented;
-* ADR for the external delivery/records system is accepted;
-* one traceability loop has been proven.
+```bash
+git diff --check
+```
+
+Structure slices should also run their relevant repo verification script.
+
+Tooling/code slices should run the relevant local verification command once stable.
+
+## Controlled Records
+
+A controlled record is required when a document becomes an approved baseline, exported release artifact, signed decision, audit artifact, or release evidence package.
+
+Controlled records are stored in Nextcloud.
+
+## Current Gate
+
+Before implementation-heavy slices, the repository should have:
+
+* simplified operating model documented;
+* GitHub workflow documented;
+* root directory contract documented;
+* repo verification scripts;
+* GitHub issue/PR templates;
+* CI baseline.

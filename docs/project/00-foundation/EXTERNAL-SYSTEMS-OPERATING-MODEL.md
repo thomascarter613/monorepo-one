@@ -1,30 +1,44 @@
----
+
 title: External Systems Operating Model
-status: draft
-version: 0.1.0
+status: accepted
+version: 0.2.0
 created: 2026-05-16
 updated: 2026-05-16
 project: monorepo-one
-jira_project_key: MONO
 visibility_note: Public GitHub repository; private external system URLs must not be committed unless intentionally approved.
----
+supersedes: version 0.1.0 external model that used Jira and Confluence as active systems.
+-----------------------------------------------------------------------------------------
 
 # External Systems Operating Model
 
 ## Purpose
 
-This document defines how Monorepo One uses external collaboration, delivery, planning, and records systems.
+This document defines the active collaboration, delivery, documentation, and records operating model for Monorepo One.
 
-The goal is to ensure that work is traceable from idea to implementation to verification to controlled record without relying on hidden chat history or informal memory.
+The operating model has been simplified to reduce friction while preserving traceability, verification, documentation discipline, and controlled records.
 
-## Current External Systems
+## Current Active Systems
 
-| System | Name / Identifier | Role | URL Handling |
-| --- | --- | --- | --- |
-| GitHub | `thomascarter613/monorepo-one` | Canonical source code, repo docs, ADRs, branches, commits, pull requests, releases, CI/CD, verification history | Public URL may be referenced |
-| Jira | `MONO` | Delivery tracking, work items, risks, task state, execution planning | Private URL stored in Confluence/Jira, not committed to public repo |
-| Confluence | `Monorepo One Engineering` | Human-readable planning hub, coordination pages, dashboards, summaries | Private URL stored in Confluence/Jira, not committed to public repo |
-| Nextcloud | Controlled Records | Controlled records, approved exports, signed/formal document copies, release/audit records | Private folder URL stored in Confluence/Jira, not committed to public repo |
+| System        | Role                                                                                                       | Status |
+| ------------- | ---------------------------------------------------------------------------------------------------------- | ------ |
+| GitHub        | Source code, issues, PRs, repo docs, ADRs, releases, verification, CI/CD, security configuration           | Active |
+| Repo Markdown | Product planning, requirements, architecture, ADRs, delivery docs, quality docs, security docs, AI handoff | Active |
+| Nextcloud     | Controlled records, approved exports, release evidence, audit artifacts                                    | Active |
+
+## Deprecated Systems
+
+| System     | Former Role                                  | Current Status              |
+| ---------- | -------------------------------------------- | --------------------------- |
+| Jira       | Work tracking and delivery workflow          | Deprecated for this project |
+| Confluence | Planning hub and human-readable coordination | Deprecated for this project |
+
+## Decision Summary
+
+Jira and Confluence were attempted as part of the initial external system setup.
+
+They are now deprecated because they introduced excessive friction for the current project stage.
+
+Monorepo One will instead use a GitHub-native operating model.
 
 ## System-of-Record Rules
 
@@ -32,144 +46,190 @@ The goal is to ensure that work is traceable from idea to implementation to veri
 
 GitHub is canonical for:
 
-- source code
-- repository documentation
-- ADRs
-- branches
-- commits
-- pull requests
-- releases
-- CI/CD definitions
-- verification scripts
-- repo-resident AI handoff files
+* source code;
+* repository documentation;
+* issues;
+* labels;
+* milestones;
+* pull requests;
+* branch protection;
+* releases;
+* CI/CD workflows;
+* security scanning configuration;
+* ADRs;
+* verification scripts;
+* repo-resident AI handoff files.
 
-If a decision affects code, architecture, tooling, verification, repository structure, or delivery discipline, it must be reflected in GitHub.
+### Repo Markdown
 
-### Jira
+Repo Markdown is canonical for:
 
-Jira is canonical for:
+* product vision;
+* product charter;
+* requirements;
+* domain model;
+* architecture;
+* ADRs;
+* delivery process;
+* quality strategy;
+* security strategy;
+* records process;
+* AI handoff;
+* current project state.
 
-- work items
-- delivery state
-- work sequencing
-- execution tracking
-- risks requiring active follow-up
-- traceability between planned work and implementation
-
-Jira work item keys should appear in branch names, pull request titles, and commit footers where practical.
-
-### Confluence
-
-Confluence is canonical for:
-
-- human-readable planning hub
-- navigation across systems
-- project coordination
-- dashboard-style summaries
-- meeting notes
-- non-canonical summaries of repo docs
-- links to private system URLs
-
-Confluence may summarize GitHub documents, but GitHub remains canonical for implementation-affecting technical records.
+Markdown files should be versioned, reviewed, and kept aligned with implementation.
 
 ### Nextcloud
 
 Nextcloud is canonical for:
 
-- controlled exported records
-- approved document baselines
-- signed documents
-- formal document copies
-- release records
-- audit records
+* controlled exported records;
+* approved document baselines;
+* formal release records;
+* audit artifacts;
+* signed documents, if any;
+* exported PDF/DOCX copies, when needed.
 
-Nextcloud should not replace GitHub as the canonical source for Markdown documentation, ADRs, source code, or verification logic.
+Nextcloud does not replace GitHub for living source documentation.
 
-## Privacy and Public Repository Rule
+## Public Repository Safety Rule
 
 The GitHub repository is public.
 
 Therefore:
 
-- Do not commit secrets.
-- Do not commit credentials.
-- Do not commit private meeting notes.
-- Do not commit private customer/user data.
-- Do not commit private Jira, Confluence, or Nextcloud URLs unless explicitly approved.
-- Use stable identifiers such as `MONO`, `Monorepo One Engineering`, and `Controlled Records` in public repo docs.
+* do not commit secrets;
+* do not commit credentials;
+* do not commit private meeting notes;
+* do not commit private customer/user data;
+* do not commit private Nextcloud URLs unless intentionally approved;
+* do not commit historical private Jira or Confluence URLs unless intentionally approved.
 
-## Traceability Convention
+Stable public-safe identifiers may be committed.
 
-A normal work item should flow like this:
+## Active Traceability Flow
 
 ```text
-Jira work item
-→ Git branch
+GitHub Issue
+→ branch
 → commit(s)
 → pull request
 → verification
 → merge
-→ Confluence summary/update
+→ release or documentation update
 → Nextcloud controlled record, when applicable
 ```
 
-## Naming Conventions
+## GitHub Issue Convention
 
-### Jira Key
+Use GitHub Issues for:
+
+* work packets;
+* bugs;
+* risks;
+* ADR work;
+* spikes;
+* documentation tasks;
+* repo maintenance;
+* verification tasks;
+* security tasks.
+
+## Branch Naming Convention
+
+Use:
 
 ```text
-MONO-123
-```
-
-### Branch
-
-```text
-MONO-123/<type>/<short-description>
+issue-<number>/<type>/<short-description>
 ```
 
 Examples:
 
 ```text
-MONO-2/docs/external-operating-model
-MONO-7/adr/package-manager-decision
-MONO-12/chore/repo-contract
+issue-1/docs/simplify-operating-model
+issue-2/chore/root-directory-contract
+issue-3/ci/add-github-actions-baseline
 ```
 
-### Commit Footer
+If an issue does not exist yet, use a clear branch name and create the issue before opening the pull request.
+
+## Commit Convention
+
+Use Conventional Commits.
+
+When tied to a GitHub issue, include:
 
 ```text
-Refs: MONO-123
+Refs: #<issue-number>
 ```
 
-### Pull Request Title
+Example:
 
 ```text
-[MONO-123] docs(scope): concise summary
+docs(governance): simplify operating model
+
+Refs: #1
 ```
 
-## Minimum Acceptance for the External System
+## Pull Request Convention
 
-The external system is accepted when:
+Pull request titles should be concise and include issue references when available.
 
-* GitHub repository exists.
-* Jira `MONO` project exists.
-* At least one Jira work item opens directly.
-* Confluence `Monorepo One Engineering` space exists.
-* Nextcloud `Controlled Records` area exists.
-* A test record exists in Nextcloud.
-* Confluence links to GitHub, Jira, and Nextcloud.
-* Jira records the DMS setup link/comment.
-* Repo documentation records this operating model.
-* A test branch/commit/PR references a Jira key.
+Example:
 
-## Current Known Limitations
+```text
+[Refs #1] docs(governance): simplify operating model
+```
 
-* Jira custom workflow configuration was attempted but deferred because work item visibility became unreliable.
-* Jira is currently accepted as usable with its simpler/default workflow.
-* Detailed workflow states will be represented through labels, PR review, verification docs, and future workflow hardening.
-* Nextcloud metadata discipline is currently lightweight and folder/register based.
-* Formal retention automation is deferred.
+## Labels
 
-## Gate Before Slice 3
+The recommended GitHub label taxonomy is:
 
-Slice 3 must not begin until this operating model is committed and linked from Jira/Confluence.
+```text
+type:adr
+type:bug
+type:chore
+type:docs
+type:feature
+type:risk
+type:spike
+type:work-packet
+
+phase:0-foundation
+phase:1-structure
+phase:2-tooling
+phase:3-ci
+phase:4-first-app
+
+status:ready
+status:in-progress
+status:blocked
+status:verification
+status:done
+
+area:architecture
+area:delivery
+area:docs
+area:governance
+area:repo
+area:security
+area:tooling
+area:verification
+```
+
+## Minimum Acceptance for the Operating Model
+
+The operating model is accepted when:
+
+* GitHub repository is active;
+* GitHub Issues are used for work tracking;
+* repo Markdown contains planning and architecture;
+* ADR-0006 records the simplification decision;
+* Nextcloud remains available for controlled records;
+* Jira and Confluence are documented as deprecated;
+* no private external URLs are committed.
+
+## Change Control
+
+Any future decision to reintroduce Jira, Confluence, Linear, Plane, Notion, SharePoint, or another external system must be recorded in a new ADR.
+
+The default should remain GitHub-native unless the added tool clearly earns its operational cost.

@@ -1,12 +1,11 @@
---------------------------------------------------------
 
 title: Current State
-status: draft
-version: 0.1.0
+status: accepted
+version: 0.2.0
 created: 2026-05-16
 updated: 2026-05-16
 project: monorepo-one
-------------------
+---------------------
 
 # Current State
 
@@ -16,60 +15,73 @@ Monorepo One
 
 ## Current Phase
 
-Phase 0: repository foundation and operating system.
+Phase 0: repository foundation and operating system simplification.
 
 ## Current Goal
 
-Establish the root-level repository structure contract before implementing applications, services, packages, infrastructure, or CI.
+Simplify the active project operating model to GitHub + repo Markdown + Nextcloud.
 
-## External Systems
+## Active Operating Model
 
-* GitHub repository exists.
-* Jira `MONO` project exists.
-* Confluence `Monorepo One Engineering` space exists.
-* Nextcloud `Controlled Records` area exists.
+```text
+GitHub = source of truth, issues, PRs, releases, verification, CI/CD
+Repo Markdown = planning, requirements, architecture, ADRs, handoff
+Nextcloud = controlled records and approved exports
+```
 
-Private external-system URLs should not be committed to the public GitHub repository.
+## Deprecated Systems
+
+```text
+Jira = deprecated
+Confluence = deprecated
+```
+
+Jira and Confluence were attempted but are no longer part of the active workflow because they created excessive friction.
+
+## Public Repository Rule
+
+The repository is public.
+
+Do not commit:
+
+* secrets;
+* credentials;
+* private URLs;
+* customer data;
+* sensitive personal data;
+* private operational notes.
 
 ## Current Work
 
 Current branch should be:
 
 ```text
-MONO-5/chore/root-directory-contract
+docs/simplify-operating-model
 ```
 
-## Completed Work
+## Current Slice
 
-* Governance foundation established.
-* External delivery and records operating model documented.
-* Planning deliverable baseline scaffolded.
-* Root directory contract scaffolded.
-* Repo structure verification script added.
+Simplify external operating model.
 
-## Current Verification
+## Expected Outputs
 
-Run:
-
-```bash
-bash tools/scripts/verify-repo-structure.sh
-git diff --check
-```
-
-If the full toolchain is stable, also run:
-
-```bash
-bun run verify
-```
+* ADR-0006;
+* updated external systems operating model;
+* updated delivery operating model;
+* GitHub workflow document;
+* deprecated Jira workflow document;
+* updated document control model;
+* updated AI current state;
+* updated external systems status.
 
 ## Next Recommended Action
 
-Open a PR for the root directory contract and reference `MONO-5`.
+After this slice is merged, proceed with the root-level repository contract if it has not already been completed.
 
-After this PR is merged, the next recommended slice is the GitHub repository collaboration baseline:
+If the root directory contract is already complete, proceed to the GitHub collaboration baseline:
 
 * issue templates;
 * pull request template;
+* label taxonomy;
 * CODEOWNERS;
-* initial CI skeleton;
-* Dependabot configuration if appropriate.
+* initial CI skeleton.

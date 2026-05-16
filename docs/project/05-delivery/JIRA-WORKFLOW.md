@@ -1,49 +1,43 @@
----
+
 title: Jira Workflow
-status: stubbed
-version: 0.1.0
+status: deprecated
+version: 0.2.0
 created: 2026-05-16
 updated: 2026-05-16
 project: monorepo-one
----
+superseded_by: docs/project/05-delivery/GITHUB-WORKFLOW.md
+----------------------------------------------------------
 
 # Jira Workflow
 
 ## Status
 
-Stubbed.
+Deprecated.
 
-## Purpose
+## Reason
 
-This document is a planning stub for **Jira Workflow**. It exists to establish the required documentation baseline before deeper monorepo implementation proceeds.
+Jira was attempted as the work tracking system for Monorepo One, but it introduced excessive friction during setup.
 
-## Current Workflow
+For the current solo, clean-slate, governance-first monorepo workflow, Jira is not part of the active delivery process.
 
-TBD. This section must be completed before this document can move from `stubbed` to `draft` or `accepted`.
+## Replacement
 
-## Intended Workflow
+Use:
 
-TBD. This section must be completed before this document can move from `stubbed` to `draft` or `accepted`.
+```text
+GitHub Issues
+GitHub Labels
+GitHub Milestones
+GitHub Pull Requests
+Repo-resident Markdown
+```
 
-## Labels
+The active workflow is documented in:
 
-TBD. This section must be completed before this document can move from `stubbed` to `draft` or `accepted`.
+```text
+docs/project/05-delivery/GITHUB-WORKFLOW.md
+```
 
-## Known Limitations
+## Historical Note
 
-TBD. This section must be completed before this document can move from `stubbed` to `draft` or `accepted`.
-
-## Future Hardening
-
-TBD. This section must be completed before this document can move from `stubbed` to `draft` or `accepted`.
-
-## Completion Criteria
-
-This document is complete when:
-
-- the section content is specific to Monorepo One;
-- assumptions and unknowns are explicit;
-- related Jira work items are referenced where appropriate;
-- related ADRs are referenced where appropriate;
-- verification or acceptance criteria are included where applicable;
-- any controlled-record export requirement is identified.
+Jira may remain as a historical setup artifact, but new Monorepo One work should not depend on Jira.
