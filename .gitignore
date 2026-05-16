@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.bun/
+.pnpm-store/
+.yarn/
+.yarn-cache/
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.turbo/
+.moon/cache/
+coverage/
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# Runtime/cache artifacts
+.cache/
+tmp/
+temp/
+
+# Project artifacts
+.artifacts/
