@@ -46,3 +46,4 @@ Recommended ADR statuses:
 | --- | --- | --- |
 | ADR-0004 | Establish External Delivery and Records System | accepted |
 | ADR-0005 | Establish Root Repository Structure | accepted |
+| ADR-0006 | Simplify Operating Model | accepted |

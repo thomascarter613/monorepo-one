@@ -1,27 +1,28 @@
 
 title: Document Control
-status: draft
-version: 0.1.0
+status: accepted
+version: 0.2.0
 created: 2026-05-16
 updated: 2026-05-16
 project: monorepo-one
 dms: nextcloud
---------------
+supersedes: version 0.1.0 external model that included Jira and Confluence as active systems.
+---------------------------------------------------------------------------------------------
 
 # Document Control
 
 ## Purpose
 
-This document defines how Monorepo One controls formal documents and records across GitHub, Confluence, Jira, and Nextcloud.
+This document defines how Monorepo One controls formal documents and records across GitHub, repo Markdown, GitHub Issues/PRs, and Nextcloud.
 
 ## Document Classes
 
-| Class             | Description                                         | Canonical System |
-| ----------------- | --------------------------------------------------- | ---------------- |
-| Working Markdown  | Living docs, specs, ADRs, implementation docs       | GitHub           |
-| Coordination Page | Human-readable summaries, dashboards, meeting notes | Confluence       |
-| Work Item         | Delivery/task/risk/verification tracking            | Jira             |
-| Controlled Record | Approved/exported/signed/final record copy          | Nextcloud        |
+| Class             | Description                                                           | Canonical System     |
+| ----------------- | --------------------------------------------------------------------- | -------------------- |
+| Working Markdown  | Living docs, specs, ADRs, architecture, planning, implementation docs | GitHub               |
+| Work Item         | Delivery/task/risk/verification tracking                              | GitHub Issues        |
+| Review Artifact   | Review, verification, merge discussion                                | GitHub Pull Requests |
+| Controlled Record | Approved/exported/signed/final record copy                            | Nextcloud            |
 
 ## Current DMS
 
@@ -59,13 +60,11 @@ Controlled Records/
 
 ## Records Register
 
-A records register exists in:
+A records register exists in Nextcloud:
 
 ```text
 Controlled Records/00-registers/RECORDS-REGISTER.md
 ```
-
-The register tracks controlled records stored in Nextcloud.
 
 ## Initial Test Record
 
@@ -75,28 +74,22 @@ The initial test record is:
 DMS-TEST-0001 - Monorepo One Records Register Test.txt
 ```
 
-Purpose:
-
-```text
-Verify that Nextcloud can serve as the controlled-records DMS for Monorepo One and can store records linked to GitHub, Jira, and Confluence.
-```
-
 ## Minimum Metadata
 
 Each controlled record should include:
 
-* Record ID
-* Title
-* Project
-* Record type
-* Document status
-* Document version
-* Retention class
-* source Git commit or GitHub URL
-* Jira key, if applicable
-* Confluence reference, if applicable
-* effective date, if applicable
-* supersedes, if applicable
+* Record ID;
+* Title;
+* Project;
+* Record type;
+* Document status;
+* Document version;
+* Retention class;
+* source Git commit or GitHub URL;
+* GitHub issue number, if applicable;
+* GitHub pull request URL, if applicable;
+* effective date, if applicable;
+* supersedes, if applicable.
 
 ## Record ID Convention
 
@@ -139,7 +132,7 @@ DMS-TEST-0001
 | ---------- | ------------------------------------------------------- |
 | Working    | Temporary or draft working record                       |
 | Controlled | Important approved project record                       |
-| Permanent  | Long-term institutional/project record                  |
+| Permanent  | Long-term project record                                |
 | Superseded | Retained to preserve history                            |
 | Audit      | Evidence of process, verification, approval, or release |
 
@@ -147,18 +140,22 @@ DMS-TEST-0001
 
 Because the GitHub repository is public:
 
-* private DMS URLs should not be committed;
-* private Confluence URLs should not be committed unless approved;
-* private Jira URLs should not be committed unless approved;
+* private Nextcloud URLs should not be committed;
 * record identifiers may be committed;
 * system names may be committed;
-* public GitHub URLs may be committed.
+* public GitHub URLs may be committed;
+* secrets must never be committed.
+
+## Deprecated References
+
+Jira and Confluence are no longer active document-control systems for Monorepo One.
+
+They should not be used for new controlled document workflows.
 
 ## Future Hardening
 
 Future improvements may include:
 
-* stronger metadata automation;
 * exported PDF baselines;
 * checksums for controlled records;
 * release evidence packages;

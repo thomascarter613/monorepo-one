@@ -49,7 +49,7 @@ The register exists to prevent uncontrolled code generation and to keep the repo
 | Success metrics     | `docs/project/01-product/SUCCESS-METRICS.md`     | Not Started | GitHub           |
 | Assumptions         | `docs/project/01-product/ASSUMPTIONS.md`         | Not Started | GitHub           |
 | Constraints         | `docs/project/01-product/CONSTRAINTS.md`         | Not Started | GitHub           |
-| Risks               | `docs/project/01-product/RISKS.md`               | Not Started | GitHub/Jira      |
+| Risks               | `docs/project/01-product/RISKS.md`               | Not Started | GitHub      |
 
 ## Requirements Deliverables
 
@@ -92,8 +92,8 @@ The register exists to prevent uncontrolled code generation and to keep the repo
 | Deliverable              | Recommended Path                                       | Status      | Canonical System  |
 | ------------------------ | ------------------------------------------------------ | ----------- | ----------------- |
 | Delivery operating model | `docs/project/05-delivery/DELIVERY-OPERATING-MODEL.md` | Draft       | GitHub            |
-| Jira workflow            | `docs/project/05-delivery/JIRA-WORKFLOW.md`            | Not Started | GitHub/Confluence |
-| Issue taxonomy           | `docs/project/05-delivery/ISSUE-TAXONOMY.md`           | Not Started | GitHub/Jira       |
+| GitHub workflow            | `docs/project/05-delivery/GITHUB-WORKFLOW.md`            | Not Started | GitHub |
+| Issue taxonomy           | `docs/project/05-delivery/ISSUE-TAXONOMY.md`           | Not Started | GitHub       |
 | Branching strategy       | `docs/project/05-delivery/BRANCHING-STRATEGY.md`       | Not Started | GitHub            |
 | Commit standard          | `docs/project/05-delivery/COMMIT-STANDARD.md`          | Not Started | GitHub            |
 | Pull request standard    | `docs/project/05-delivery/PULL-REQUEST-STANDARD.md`    | Not Started | GitHub            |

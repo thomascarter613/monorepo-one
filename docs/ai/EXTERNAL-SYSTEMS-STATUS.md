@@ -1,22 +1,46 @@
 
 title: External Systems Status
-status: draft
-version: 0.1.0
+status: accepted
+version: 0.2.0
 created: 2026-05-16
 updated: 2026-05-16
 project: monorepo-one
-jira_project_key: MONO
-----------------------
+---------------------
 
 # External Systems Status
 
 ## Current Phase
 
-Phase 0: Planning, documentation, and external delivery-system setup.
+Phase 0: repository foundation and operating system simplification.
+
+## Active Systems
+
+| System        | Status | Role                                                                    |
+| ------------- | ------ | ----------------------------------------------------------------------- |
+| GitHub        | Active | Source of truth, issues, PRs, docs, ADRs, verification, releases, CI/CD |
+| Repo Markdown | Active | Planning, architecture, requirements, decisions, handoff                |
+| Nextcloud     | Active | Controlled records and approved exports                                 |
+
+## Deprecated Systems
+
+| System     | Status     | Reason                                               |
+| ---------- | ---------- | ---------------------------------------------------- |
+| Jira       | Deprecated | Excessive friction for current solo project workflow |
+| Confluence | Deprecated | Excessive friction; repo Markdown is preferred       |
+
+## Current Operating Model
+
+Use:
+
+```text
+GitHub + repo Markdown + Nextcloud
+```
+
+Do not use Jira or Confluence for new active project delivery.
 
 ## GitHub
 
-Status: Created
+Status: Active.
 
 Repository:
 
@@ -33,51 +57,12 @@ Public
 Important note:
 
 ```text
-Do not commit secrets, private notes, credentials, customer data, or private external-system URLs.
+Do not commit secrets, credentials, private notes, customer data, sensitive personal data, or private Nextcloud URLs.
 ```
-
-## Jira
-
-Status: Created
-
-Project name:
-
-```text
-Monorepo One
-```
-
-Project key:
-
-```text
-MONO
-```
-
-Current known state:
-
-* Jira project exists.
-* `MONO-2` opens directly.
-* Custom workflow configuration was attempted but deferred.
-* Jira is usable as a simple work tracker for now.
-
-## Confluence
-
-Status: Created
-
-Space name:
-
-```text
-Monorepo One Engineering
-```
-
-Current known state:
-
-* Homepage exists.
-* Page tree exists.
-* GitHub/Jira/Nextcloud links are recorded in Confluence.
 
 ## Nextcloud
 
-Status: Created
+Status: Active.
 
 Provider:
 
@@ -97,36 +82,23 @@ Current known state:
 * Folder structure exists.
 * Test record exists.
 * Records register exists.
-* Confluence has been updated.
-* Jira has been updated.
 
-## Test Record
+## Jira
 
-```text
-DMS-TEST-0001 - Monorepo One Records Register Test.txt
-```
+Status: Deprecated.
 
-Purpose:
+Jira may remain as a historical setup artifact, but it is not part of the active Monorepo One workflow.
 
-```text
-Verify that Nextcloud can serve as the controlled-records DMS for Monorepo One and can store records linked to GitHub, Jira, and Confluence.
-```
+## Confluence
 
-## Gate Status Before Slice 3
+Status: Deprecated.
 
-| Gate                                                | Status      |
-| --------------------------------------------------- | ----------- |
-| GitHub repository exists                            | Passed      |
-| Jira MONO project exists                            | Passed      |
-| Jira work item opens directly                       | Passed      |
-| Confluence space exists                             | Passed      |
-| Confluence page tree exists                         | Passed      |
-| Nextcloud Controlled Records area exists            | Passed      |
-| Nextcloud test record exists                        | Passed      |
-| Repo documentation records external operating model | In Progress |
-| ADR records external delivery system                | In Progress |
-| Traceability branch/commit/PR references Jira key   | In Progress |
+Confluence may remain as a historical setup artifact, but it is not part of the active Monorepo One workflow.
+
+## Current Gate Before Further Implementation
+
+The simplified operating model should be committed and merged before proceeding with additional repo slices.
 
 ## Next Required Action
 
-Commit the external operating model documentation and reference `MONO-2`.
+Commit ADR-0006 and the updated operating model docs.
