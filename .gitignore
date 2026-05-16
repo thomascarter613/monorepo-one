@@ -37,4 +37,5 @@ tmp/
 temp/
 
 # Project artifacts
-.artifacts/
+.artifacts/*
+!.artifacts/README.md
