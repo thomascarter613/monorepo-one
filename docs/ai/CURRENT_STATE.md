@@ -14,13 +14,11 @@ New Ultimate Monorepo
 
 ## Current Goal
 
-Initialize a clean-slate, high-grade monorepo with governance-first foundations.
+Initialize a clean-slate, high-grade monorepo with governance-first foundations and a verified tooling baseline.
 
 ## Current Repository State
 
-Initial repository foundation is being created.
-
-No package manager, workspace tooling, application code, service code, package code, CI, or build system has been added yet.
+The repository has an initial governance foundation and is adding the first toolchain/workspace baseline.
 
 ## Completed Work
 
@@ -29,24 +27,31 @@ No package manager, workspace tooling, application code, service code, package c
 * Repository principles drafted.
 * ADR process established.
 * AI handoff files created.
+* Root package manifest drafted.
+* TypeScript baseline drafted.
+* Biome baseline drafted.
+* Turbo baseline drafted.
+* moon baseline drafted.
+* Lefthook baseline drafted.
+* Root verification script drafted.
 
 ## Current Slice
 
-Slice 1: Repository Identity and Governance Foundation.
+Slice 2: Toolchain and Workspace Foundation.
 
 ## Verification Status
 
-Manual verification is required.
+Verification is required after dependency installation.
 
 Recommended verification:
 
 ```bash
-git status --short
-find . -maxdepth 4 -type f | sort
+bun install
+bun run hooks:install
+bun run format
+bun run verify
 ```
 
 ## Next Recommended Action
 
-Add the initial files, inspect them, and make the first atomic commit.
-
-After that, proceed to Slice 2: toolchain and workspace decision foundation.
+After this slice is committed, proceed to Slice 3: root-level directory contract and repository structure.

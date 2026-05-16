@@ -1,0 +1,22 @@
+projects:
+  globFormat: 'source-path'
+  globs:
+    - 'apps/*'
+    - 'services/*'
+    - 'packages/*'
+    - 'tools/*'
+
+constraints:
+  enforceLayerRelationships: true
+
+pipeline:
+  installDependencies: false
+  syncProjects: true
+  syncWorkspace: true
+
+telemetry: false
+
+vcs:
+  client: 'git'
+  provider: 'github'
+  defaultBranch: 'main'

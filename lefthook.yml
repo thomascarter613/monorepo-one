@@ -1,0 +1,16 @@
+pre-commit:
+  parallel: false
+  commands:
+    whitespace:
+      run: git diff --check --cached
+
+commit-msg:
+  commands:
+    conventional-commit:
+      run: bash tools/scripts/validate-commit-msg.sh {1}
+
+pre-push:
+  parallel: false
+  commands:
+    verify:
+      run: bun run verify

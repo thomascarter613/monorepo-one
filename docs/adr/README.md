@@ -33,9 +33,15 @@ Recommended ADR statuses:
 
 ## ADR Index
 
-| ADR      | Title                         | Status   |
-| -------- | ----------------------------- | -------- |
-| ADR-0001 | Record Architecture Decisions | accepted |
-|          |                               |          |
+| ADR      | Title                                  | Status   |
+| -------- | -------------------------------------- | -------- |
+| ADR-0001 | Record Architecture Decisions          | accepted |
+| ADR-0002 | Select Initial Toolchain Baseline      | accepted |
+| ADR-0003 | Define Turbo and Moon Responsibilities | accepted |
+|          |                                        |          |
 
+## ADR Index
 
+| ADR | Title | Status |
+| --- | --- | --- |
+| ADR-0004 | Establish External Delivery and Records System | accepted |
