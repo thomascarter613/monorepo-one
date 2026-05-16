@@ -1,57 +1,69 @@
-
+---
 title: Current State
 status: draft
 version: 0.1.0
 created: 2026-05-16
 updated: 2026-05-16
--------------------
+project: monorepo-one
+---
 
 # Current State
 
 ## Project
 
-New Ultimate Monorepo
+Monorepo One
+
+## Current Phase
+
+Phase 0: planning, documentation, external delivery system, and governance foundation.
 
 ## Current Goal
 
-Initialize a clean-slate, high-grade monorepo with governance-first foundations and a verified tooling baseline.
+Establish all planning and documentation deliverables that should exist before proceeding to Slice 3.
 
-## Current Repository State
+## External Systems
 
-The repository has an initial governance foundation and is adding the first toolchain/workspace baseline.
+- GitHub repository exists.
+- Jira `MONO` project exists.
+- Confluence `Monorepo One Engineering` space exists.
+- Nextcloud `Controlled Records` area exists.
 
-## Completed Work
+Private external-system URLs should not be committed to the public GitHub repository.
 
-* Initial documentation spine drafted.
-* Engineering standard drafted.
-* Repository principles drafted.
-* ADR process established.
-* AI handoff files created.
-* Root package manifest drafted.
-* TypeScript baseline drafted.
-* Biome baseline drafted.
-* Turbo baseline drafted.
-* moon baseline drafted.
-* Lefthook baseline drafted.
-* Root verification script drafted.
+## Current Work
 
-## Current Slice
+Current branch should be:
 
-Slice 2: Toolchain and Workspace Foundation.
+```text
+MONO-3/docs/planning-deliverable-baseline
+````
 
-## Verification Status
+## Completed Baseline
 
-Verification is required after dependency installation.
+The repository now has stubs for:
 
-Recommended verification:
+* foundation docs;
+* product docs;
+* requirements docs;
+* domain docs;
+* architecture docs;
+* delivery docs;
+* quality docs;
+* security docs;
+* records docs;
+* AI handoff docs.
 
-```bash
-bun install
-bun run hooks:install
-bun run format
-bun run verify
-```
+## Gate Before Slice 3
+
+Slice 3 remains blocked until:
+
+* this planning baseline is committed;
+* the planning deliverable register is accurate;
+* the external operating model is committed;
+* no private URLs are committed;
+* Jira/Confluence are updated with the planning baseline PR;
+* the PR is merged into `main`.
 
 ## Next Recommended Action
 
-After this slice is committed, proceed to Slice 3: root-level directory contract and repository structure.
+Open a PR for the planning deliverable baseline and reference `MONO-3`.

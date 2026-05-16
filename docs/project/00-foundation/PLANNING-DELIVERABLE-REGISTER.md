@@ -44,7 +44,7 @@ The register exists to prevent uncontrolled code generation and to keep the repo
 | Product vision      | `docs/project/01-product/PRODUCT-VISION.md`      | Not Started | GitHub           |
 | Product charter     | `docs/project/01-product/PRODUCT-CHARTER.md`     | Not Started | GitHub           |
 | Problem statement   | `docs/project/01-product/PROBLEM-STATEMENT.md`   | Not Started | GitHub           |
-| Goals and non-goals | `docs/project/01-product/GOALS-AND-NON-GOALS.md` | Not Started | GitHub           |
+| Goals and non-goals | `docs/project/01-product/GOALS-AND-NON-GOALS.md` | Stubbed | GitHub           |
 | Stakeholders        | `docs/project/01-product/STAKEHOLDERS.md`        | Not Started | GitHub           |
 | Success metrics     | `docs/project/01-product/SUCCESS-METRICS.md`     | Not Started | GitHub           |
 | Assumptions         | `docs/project/01-product/ASSUMPTIONS.md`         | Not Started | GitHub           |
@@ -57,7 +57,7 @@ The register exists to prevent uncontrolled code generation and to keep the repo
 | ----------------------------------- | ------------------------------------------------------------- | ----------- | ---------------- |
 | Software Requirements Specification | `docs/project/02-requirements/SRS.md`                         | Not Started | GitHub           |
 | Functional requirements             | `docs/project/02-requirements/FUNCTIONAL-REQUIREMENTS.md`     | Not Started | GitHub           |
-| Non-functional requirements         | `docs/project/02-requirements/NON-FUNCTIONAL-REQUIREMENTS.md` | Not Started | GitHub           |
+| Non-functional requirements         | `docs/project/02-requirements/NON-FUNCTIONAL-REQUIREMENTS.md` | Stubbed | GitHub           |
 | Acceptance criteria                 | `docs/project/02-requirements/ACCEPTANCE-CRITERIA.md`         | Not Started | GitHub           |
 | Traceability matrix                 | `docs/project/02-requirements/TRACEABILITY-MATRIX.md`         | Not Started | GitHub           |
 | Out of scope                        | `docs/project/02-requirements/OUT-OF-SCOPE.md`                | Not Started | GitHub           |
@@ -68,7 +68,7 @@ The register exists to prevent uncontrolled code generation and to keep the repo
 | Deliverable         | Recommended Path                                | Status      | Canonical System |
 | ------------------- | ----------------------------------------------- | ----------- | ---------------- |
 | Domain model        | `docs/project/03-domain/DOMAIN-MODEL.md`        | Not Started | GitHub           |
-| Ubiquitous language | `docs/project/03-domain/UBIQUITOUS-LANGUAGE.md` | Not Started | GitHub           |
+| Ubiquitous language | `docs/project/03-domain/UBIQUITOUS-LANGUAGE.md` | Stubbed | GitHub           |
 | Bounded contexts    | `docs/project/03-domain/BOUNDED-CONTEXTS.md`    | Not Started | GitHub           |
 | Domain events       | `docs/project/03-domain/DOMAIN-EVENTS.md`       | Not Started | GitHub           |
 | State machines      | `docs/project/03-domain/STATE-MACHINES.md`      | Not Started | GitHub           |
@@ -84,7 +84,7 @@ The register exists to prevent uncontrolled code generation and to keep the repo
 | Data architecture          | `docs/project/04-architecture/DATA-ARCHITECTURE.md`          | Not Started | GitHub           |
 | Integration architecture   | `docs/project/04-architecture/INTEGRATION-ARCHITECTURE.md`   | Not Started | GitHub           |
 | Security architecture      | `docs/project/04-architecture/SECURITY-ARCHITECTURE.md`      | Not Started | GitHub           |
-| Observability architecture | `docs/project/04-architecture/OBSERVABILITY-ARCHITECTURE.md` | Not Started | GitHub           |
+| Observability architecture | `docs/project/04-architecture/OBSERVABILITY-ARCHITECTURE.md` | Stubbed | GitHub           |
 | Deployment architecture    | `docs/project/04-architecture/DEPLOYMENT-ARCHITECTURE.md`    | Not Started | GitHub           |
 
 ## Delivery Deliverables
@@ -109,7 +109,7 @@ The register exists to prevent uncontrolled code generation and to keep the repo
 | Testing strategy      | `docs/project/06-quality/TESTING-STRATEGY.md`      | Not Started | GitHub           |
 | BDD strategy          | `docs/project/06-quality/BDD-STRATEGY.md`          | Not Started | GitHub           |
 | TDD strategy          | `docs/project/06-quality/TDD-STRATEGY.md`          | Not Started | GitHub           |
-| Verification strategy | `docs/project/06-quality/VERIFICATION-STRATEGY.md` | Not Started | GitHub           |
+| Verification strategy | `docs/project/06-quality/VERIFICATION-STRATEGY.md` | Stubbed | GitHub           |
 | CI/CD strategy        | `docs/project/06-quality/CI-CD-STRATEGY.md`        | Not Started | GitHub           |
 | Repo contract         | `docs/project/06-quality/REPO-CONTRACT.md`         | Not Started | GitHub           |
 | Quality gates         | `docs/project/06-quality/QUALITY-GATES.md`         | Not Started | GitHub           |
@@ -121,7 +121,7 @@ The register exists to prevent uncontrolled code generation and to keep the repo
 | Security strategy     | `docs/project/07-security/SECURITY-STRATEGY.md`     | Not Started | GitHub           |
 | Threat model          | `docs/project/07-security/THREAT-MODEL.md`          | Not Started | GitHub           |
 | Secret management     | `docs/project/07-security/SECRET-MANAGEMENT.md`     | Not Started | GitHub           |
-| Supply-chain security | `docs/project/07-security/SUPPLY-CHAIN-SECURITY.md` | Not Started | GitHub           |
+| Supply-chain security | `docs/project/07-security/SUPPLY-CHAIN-SECURITY.md` | Stubbed | GitHub           |
 | Access control        | `docs/project/07-security/ACCESS-CONTROL.md`        | Not Started | GitHub           |
 | Incident response     | `docs/project/07-security/INCIDENT-RESPONSE.md`     | Not Started | GitHub           |
 | Records management    | `docs/project/08-records/RECORDS-MANAGEMENT.md`     | Not Started | GitHub/Nextcloud |
